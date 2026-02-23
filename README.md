@@ -26,9 +26,9 @@ This is the user interface for the Library Management System. It provides a seam
 2. Open terminal and install dependencies:
    ```bash
    npm install
-3.Run the application:
-    ```bash
-    npm start
+3. Run the application
+   ```bash
+   npm start
 
 
-Backend Link: [Link your Backend Repo Here]
+### Backend Link: [Link your Backend Repo Here]
