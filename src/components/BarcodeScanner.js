@@ -16,9 +16,9 @@ const BarcodeScanner = ({ onScanSuccess }) => {
     
     scannerRef.current = html5QrCode;
 
-    // තත්පර 10කින් පස්සේ scan වුණේ නැත්නම් message එකක් පෙන්වනවා
+    
     const timeoutId = setTimeout(() => {
-      setErrorMsg("ස්කෑන් කිරීමට අපහසුයි. කරුණාකර ISBN අංකය manually ටයිප් කරන්න.");
+      setErrorMsg("Please enter the code manually.");
     }, 10000);
 
     const startScanner = async () => {
@@ -30,7 +30,7 @@ const BarcodeScanner = ({ onScanSuccess }) => {
             qrbox: { width: 300, height: 150 },
           },
           (decodedText) => {
-            clearTimeout(timeoutId); // සාර්ථක වුණොත් timeout එක අයින් කරනවා
+            clearTimeout(timeoutId); 
             stopCamera();
             onScanSuccess(decodedText);
           },
@@ -81,7 +81,7 @@ const BarcodeScanner = ({ onScanSuccess }) => {
       
       <div id="reader"></div>
       
-      {/* තත්පර 10ක් ගියාම එන Error Message එක */}
+      
       {errorMsg && <div className="scan-msg">{errorMsg}</div>}
       
       {/* Scanning Line */}
